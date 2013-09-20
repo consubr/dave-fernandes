@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h:form id="AtorListForm">
+
+
+        <table border="0" cellspacing="10">
+            <tbody>
+                <tr>
+                    <td>
+
+                        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                        <form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+                            <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                            <input type="hidden" name="receiverEmail" value="consubr@yahoo.com.br" />
+                            <input type="hidden" name="currency" value="BRL" />
+                            <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/184x42-doar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+                    </td>
+                    <td>
+
+
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick"/>
+                            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                                   "/>
+                            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira mais fácil e segura de efetuar pagamentos online!"/>
+                            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1"/>
+
+                        </form>
+
+                    </td>
+                    <td>
+
+
+                        <h:outputLink value="http://davefernandes.com.br" title="davefernandes.com.br" >
+                            Pague uma Bebida!
+                        </h:outputLink>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+        <p:panel header="#{myBundle.ListAtorTitle}">
+
+
+
+            <p:dataTable id="datalist" value="#{atorController.lazyModel}" var="item" lazy="true"
+                         selectionMode="single" selection="#{atorController.selected}"
+                         rowKey="#{item.atorId}"
+                         paginator="true" rows="10"
+                         paginatorTemplate="{RowsPerPageDropdown} {PreviousPageLink} {CurrentPageReport} {NextPageLink}" 
+                         rowsPerPageTemplate="10,20,30,40,50,100,200,1000"
+                         >
+
+                <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                <p:column sortBy="#{item.atorId}" filterBy="#{item.atorId}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListAtorTitle_atorId}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.atorId}"/>
+                </p:column>
+                <p:column sortBy="#{item.primeiroNome}" filterBy="#{item.primeiroNome}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListAtorTitle_primeiroNome}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.primeiroNome}"/>
+                </p:column>
+                <p:column sortBy="#{item.ultimoNome}" filterBy="#{item.ultimoNome}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListAtorTitle_ultimoNome}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.ultimoNome}"/>
+                </p:column>
+                <p:column sortBy="#{item.ultimaAtualizacao}" filterBy="#{item.ultimaAtualizacao}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListAtorTitle_ultimaAtualizacao}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.ultimaAtualizacao}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </p:column>
+                <f:facet name="header">
+                    <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{myBundle.Create}" actionListener="#{atorController.prepareCreate}" update=":AtorCreateForm" oncomplete="AtorCreateDialog.show()"/>
+                    <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{myBundle.View}" update=":AtorViewForm" oncomplete="AtorViewDialog.show()" disabled="#{empty atorController.selected}"/>
+                    <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{myBundle.Edit}" update=":AtorEditForm" oncomplete="AtorEditDialog.show()" disabled="#{empty atorController.selected}"/>
+                    <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{myBundle.Delete}" actionListener="#{atorController.delete}" update=":growl,datalist" disabled="#{empty atorController.selected}"/>
+                </f:facet>
+
+            </p:dataTable>
+
+        </p:panel>
+
+    </h:form>
+
+</ui:composition>

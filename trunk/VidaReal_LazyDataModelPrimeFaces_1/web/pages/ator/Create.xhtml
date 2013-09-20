@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AtorCreateDlg" widgetVar="AtorCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateAtorTitle}">
+
+            <h:form id="AtorCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{atorController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateAtorLabel_primeiroNome}" for="primeiroNome" />
+                        <p:inputText id="primeiroNome" value="#{atorController.selected.primeiroNome}" title="#{myBundle.CreateAtorTitle_primeiroNome}" required="true" requiredMessage="#{myBundle.CreateAtorRequiredMessage_primeiroNome}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateAtorLabel_ultimoNome}" for="ultimoNome" />
+                        <p:inputText id="ultimoNome" value="#{atorController.selected.ultimoNome}" title="#{myBundle.CreateAtorTitle_ultimoNome}" required="true" requiredMessage="#{myBundle.CreateAtorRequiredMessage_ultimoNome}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateAtorLabel_ultimaAtualizacao}" for="ultimaAtualizacao" />
+                        <p:calendar id="ultimaAtualizacao" pattern="MM/dd/yyyy HH:mm:ss" value="#{atorController.selected.ultimaAtualizacao}" title="#{myBundle.EditAtorTitle_ultimaAtualizacao}" required="true" requiredMessage="#{myBundle.EditAtorRequiredMessage_ultimaAtualizacao}" showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{atorController.saveNew}" value="#{myBundle.Save}" update="display,:AtorListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,AtorCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="AtorCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>
